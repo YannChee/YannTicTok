@@ -19,9 +19,12 @@
 		A5EE5F26283DA875008F646A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F22283DA875008F646A /* SceneDelegate.swift */; };
 		A5EE5F2B283DD826008F646A /* HomeVideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */; };
 		A5EE5F2D283DD866008F646A /* HomeVideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */; };
+		D4BC4986A27973ED6FF0603D /* Pods_YannTicTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D7F46E9F4B1ACC33B513CD /* Pods_YannTicTok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5682B731902E85291A9F57B1 /* Pods-YannTicTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YannTicTok.release.xcconfig"; path = "Target Support Files/Pods-YannTicTok/Pods-YannTicTok.release.xcconfig"; sourceTree = "<group>"; };
+		83D7F46E9F4B1ACC33B513CD /* Pods_YannTicTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YannTicTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C76283D53A700C18E17 /* YannTicTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YannTicTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C82283D53A800C18E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5938C85283D53A800C18E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		A5EE5F22283DA875008F646A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVideoListController.swift; sourceTree = "<group>"; };
 		A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoListCell.swift; sourceTree = "<group>"; };
+		FB788A12529A01EAD71CD5B3 /* Pods-YannTicTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YannTicTok.debug.xcconfig"; path = "Target Support Files/Pods-YannTicTok/Pods-YannTicTok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +47,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BC4986A27973ED6FF0603D /* Pods_YannTicTok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8EEA80597C839937CDD1A385 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB788A12529A01EAD71CD5B3 /* Pods-YannTicTok.debug.xcconfig */,
+				5682B731902E85291A9F57B1 /* Pods-YannTicTok.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		95E0858895F16D79FB320BCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83D7F46E9F4B1ACC33B513CD /* Pods_YannTicTok.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5938C6D283D53A700C18E17 = {
 			isa = PBXGroup;
 			children = (
 				A5938C78283D53A700C18E17 /* YannTicTok */,
 				A5938C77283D53A700C18E17 /* Products */,
+				8EEA80597C839937CDD1A385 /* Pods */,
+				95E0858895F16D79FB320BCB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,9 +141,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5938C8A283D53A800C18E17 /* Build configuration list for PBXNativeTarget "YannTicTok" */;
 			buildPhases = (
+				5A6DCAC40AB2D9C1B0743E9E /* [CP] Check Pods Manifest.lock */,
 				A5938C72283D53A700C18E17 /* Sources */,
 				A5938C73283D53A700C18E17 /* Frameworks */,
 				A5938C74283D53A700C18E17 /* Resources */,
+				D5297335887A175513D1DE15 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +200,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A6DCAC40AB2D9C1B0743E9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YannTicTok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5297335887A175513D1DE15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YannTicTok/Pods-YannTicTok-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YannTicTok/Pods-YannTicTok-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YannTicTok/Pods-YannTicTok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A5938C72283D53A700C18E17 /* Sources */ = {
@@ -324,6 +393,7 @@
 		};
 		A5938C8B283D53A800C18E17 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB788A12529A01EAD71CD5B3 /* Pods-YannTicTok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -352,6 +422,7 @@
 		};
 		A5938C8C283D53A800C18E17 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5682B731902E85291A9F57B1 /* Pods-YannTicTok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
