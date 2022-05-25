@@ -35,7 +35,7 @@ class MainTabBarController: UITabBarController {
                   _ image: String,
                   _ selectedImage: String,
                   _ type: UIViewController.Type) {
-        let child = UINavigationController(rootViewController: type.init())
+        let child = MainNavigationControllerController(rootViewController: type.init())
         child.title = title
         child.tabBarItem.image = UIImage(named: image)
         child.tabBarItem.selectedImage = UIImage(named: selectedImage)
@@ -56,42 +56,42 @@ class MainTabBarController: UITabBarController {
 }
 
 extension MainTabBarController: UITabBarControllerDelegate {
-    
+
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let tabBarIndex = tabBarController.selectedIndex
-        
+
         if tabBarIndex == 2 {
             return
         }
-        
+
         if tabBarIndex != 0 {
             customTabBar.bgImgV.backgroundColor = .white
             customTabBar.publishBtn.setImage(UIImage.init(named: "btn_home_add"), for: .normal)
-            
+
             for(index,tabBarItem) in tabarItemArr.enumerated() {
                 tabBarItem.setTitleTextAttributes([
                     NSAttributedString.Key.foregroundColor: UIColor.black
                 ], for: .selected)
-                
+
                 tabBarItem.image = UIImage(named: selectOtherIndxStatusImageArr[index])
             }
-            
-            
+
+
             return
         }
-        
+
         customTabBar.bgImgV.backgroundColor = UIColor.black
         customTabBar.publishBtn.setImage(UIImage.init(named: "btn_home_add_white"), for: .normal)
-       
-        
+
+
         for(index,tabBarItem) in tabarItemArr.enumerated() {
             tabBarItem.setTitleTextAttributes([
                 NSAttributedString.Key.foregroundColor: UIColor.black
             ], for: .selected)
-            
+
             tabBarItem.image = UIImage(named: select0IndxStatusImageArr[index])
         }
-        
+
         viewController.tabBarItem.setTitleTextAttributes([
             NSAttributedString.Key.foregroundColor: UIColor.white
         ], for: .selected)

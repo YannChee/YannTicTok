@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		A5EE5F26283DA875008F646A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F22283DA875008F646A /* SceneDelegate.swift */; };
 		A5EE5F2B283DD826008F646A /* HomeVideoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */; };
 		A5EE5F2D283DD866008F646A /* HomeVideoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */; };
+		BE533404283E8FF3000E0675 /* MainNavigationControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE533403283E8FF3000E0675 /* MainNavigationControllerController.swift */; };
 		D4BC4986A27973ED6FF0603D /* Pods_YannTicTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D7F46E9F4B1ACC33B513CD /* Pods_YannTicTok.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		A5EE5F22283DA875008F646A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVideoListController.swift; sourceTree = "<group>"; };
 		A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVideoListCell.swift; sourceTree = "<group>"; };
+		BE533403283E8FF3000E0675 /* MainNavigationControllerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationControllerController.swift; sourceTree = "<group>"; };
 		FB788A12529A01EAD71CD5B3 /* Pods-YannTicTok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YannTicTok.debug.xcconfig"; path = "Target Support Files/Pods-YannTicTok/Pods-YannTicTok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +62,6 @@
 				FB788A12529A01EAD71CD5B3 /* Pods-YannTicTok.debug.xcconfig */,
 				5682B731902E85291A9F57B1 /* Pods-YannTicTok.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -117,9 +118,10 @@
 		A5EE5F1E283DA875008F646A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A5EE5F21283DA875008F646A /* AppDelegate.swift */,
+				BE533403283E8FF3000E0675 /* MainNavigationControllerController.swift */,
 				A5EE5F1F283DA875008F646A /* MainTabBar.swift */,
 				A5EE5F20283DA875008F646A /* MainTabBarController.swift */,
-				A5EE5F21283DA875008F646A /* AppDelegate.swift */,
 				A5EE5F22283DA875008F646A /* SceneDelegate.swift */,
 			);
 			path = Main;
@@ -162,7 +164,6 @@
 		A5938C6E283D53A700C18E17 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
@@ -172,7 +173,7 @@
 				};
 			};
 			buildConfigurationList = A5938C71283D53A700C18E17 /* Build configuration list for PBXProject "YannTicTok" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -249,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5EE5F25283DA875008F646A /* AppDelegate.swift in Sources */,
+				BE533404283E8FF3000E0675 /* MainNavigationControllerController.swift in Sources */,
 				A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */,
 				A5EE5F2D283DD866008F646A /* HomeVideoListCell.swift in Sources */,
 				A5EE5F26283DA875008F646A /* SceneDelegate.swift in Sources */,
