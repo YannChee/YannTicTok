@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A508895F283EEB9B00CBE52F /* QYHttpTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = A508895E283EEB9B00CBE52F /* QYHttpTool.swift */; };
+		A5088961283EF40100CBE52F /* QYHttpSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088960283EF40100CBE52F /* QYHttpSessionManager.swift */; };
+		A5088963283F057C00CBE52F /* QYHttpTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088962283F057C00CBE52F /* QYHttpTask.swift */; };
 		A5938C83283D53A800C18E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5938C82283D53A800C18E17 /* Assets.xcassets */; };
 		A5938C86283D53A800C18E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5938C84283D53A800C18E17 /* LaunchScreen.storyboard */; };
 		A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C94283D5E4400C18E17 /* HomeViewController.swift */; };
@@ -26,6 +29,9 @@
 /* Begin PBXFileReference section */
 		5682B731902E85291A9F57B1 /* Pods-YannTicTok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YannTicTok.release.xcconfig"; path = "Target Support Files/Pods-YannTicTok/Pods-YannTicTok.release.xcconfig"; sourceTree = "<group>"; };
 		83D7F46E9F4B1ACC33B513CD /* Pods_YannTicTok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YannTicTok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A508895E283EEB9B00CBE52F /* QYHttpTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpTool.swift; sourceTree = "<group>"; };
+		A5088960283EF40100CBE52F /* QYHttpSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpSessionManager.swift; sourceTree = "<group>"; };
+		A5088962283F057C00CBE52F /* QYHttpTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpTask.swift; sourceTree = "<group>"; };
 		A5938C76283D53A700C18E17 /* YannTicTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YannTicTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C82283D53A800C18E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5938C85283D53A800C18E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +79,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A508895D283EEB3100CBE52F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A508895E283EEB9B00CBE52F /* QYHttpTool.swift */,
+				A5088960283EF40100CBE52F /* QYHttpSessionManager.swift */,
+				A5088962283F057C00CBE52F /* QYHttpTask.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		A5938C6D283D53A700C18E17 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +110,7 @@
 		A5938C78283D53A700C18E17 /* YannTicTok */ = {
 			isa = PBXGroup;
 			children = (
+				A508895D283EEB3100CBE52F /* Network */,
 				A5EE5F29283DD826008F646A /* VideoList */,
 				A5EE5F1E283DA875008F646A /* Main */,
 				A5938C8D283D542700C18E17 /* Resources */,
@@ -257,9 +274,12 @@
 				A5938C99283D5E7C00C18E17 /* InboxViewController.swift in Sources */,
 				A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */,
 				A5EE5F24283DA875008F646A /* MainTabBarController.swift in Sources */,
+				A5088961283EF40100CBE52F /* QYHttpSessionManager.swift in Sources */,
 				A5938C9B283D5E9800C18E17 /* MineViewController.swift in Sources */,
+				A5088963283F057C00CBE52F /* QYHttpTask.swift in Sources */,
 				A5EE5F2B283DD826008F646A /* HomeVideoListController.swift in Sources */,
 				A5938C97283D5E6100C18E17 /* DiscoverViewController.swift in Sources */,
+				A508895F283EEB9B00CBE52F /* QYHttpTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

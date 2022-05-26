@@ -7,6 +7,11 @@ target 'YannTicTok' do
 
   # Pods for YannTicTok
   pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
+  pod 'SnapKit'
 
 
+  pod 'MJRefresh'
+  
 end
