@@ -7,6 +7,7 @@
 
 import UIKit
 import MJRefresh
+import SwiftyJSON
 
 // MARK: - 生命周期方法
 extension HomeVideoListController {
@@ -18,7 +19,7 @@ extension HomeVideoListController {
         
         weak var weakSelf = self
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
-            weakSelf!.loadNewData()
+            weakSelf!.requestList(isPullingDown: true)
         })
         
         tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
@@ -34,31 +35,54 @@ extension HomeVideoListController {
     }
     
     
-    func loadNewData() {
-//        request(API.imgrank, parameters: ["page": 1]).responseJSON {
-//            [weak self] response in
-//            guard let dict = response.result.value else { return }
-//            let jsons = JSON(dict)["items"].arrayObject
-//            guard let models = modelArray(from: jsons, Item.self) else { return }
-//
-//            self?.items.removeAll()
-//            self?.items.append(contentsOf: models)
-//
-//            self?.tableView.reloadData()
-//            self?.tableView.mj_header.endRefreshing()
-//
-//            self?.page = 1
-//        }
+    
+    func requestList(isPullingDown: Bool) {
+        let param = [
+            "topicName": "美女",
+            "tab": 0,
+            "topicId": 10548,
+            "deviceId": "BCE94472-E9A9-48D4-A38D-C987EBC30339",
+            "userId": 1630431855104
+        ] as [String : Any]
         
+        let tempHeader = [
+            "authToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuaWNrTmFtZSI6IueskeWHuuiCvuiZmueahOWcsOaWuSIsImZhaWx1cmVUaW1lIjoiMTY1NDk1NzM3MTIwNyIsInR5cGUiOiIyIiwidXNlcklkIjoiMTYzMDQzMTg1NTEwNCJ9.KUjJ-NZeNKMRFtdJcqK0tbs8mwbNVE_oslDrnTvh4lY",
+            "User-Agent" : "Funnyplanet/1.4.7 (iPhone; iOS 15.4.1; Scale/3.00)",
+            "userId" : "1630431855104",
+
+            "deviceType" : "iOS",
+            "channel"    : "appStore",
+            "os" : "apple",
+            "Content-Type" : "application/json",
+            "appver" :    "1.4.7"]
         
-        QYHttpTool.GET(url:"http://m2.qiushibaike.com/article/list/imgrank", parameters: ["page": 1]).success { JSON in
-            print(JSON)
+        QYHttpTool.POST(url: "https://server.sortinghat.cn/api/topic/topicRecommendPostList",
+                        parameters: param,headers:tempHeader).success {[weak self] responseObj in
             
-            self.tableView.mj_header?.endRefreshing()
+            self!.tableView.mj_header?.endRefreshing()
+            self!.tableView.mj_footer?.endRefreshing()
+            self!.tableView.mj_footer?.isHidden = false;
+            
+            if isPullingDown {
+                self!.modelList.removeAll()
+            }
+         
+            let dictArr =  JSON(responseObj)["data"]["list"].arrayObject
+        
+            guard let modelArr:Array = [PostInfo].deserialize(from: dictArr) else {
+                return
+            }
+            
+            modelArr.forEach { postModel in
+                self!.modelList.append(postModel!)
+            }
+            self?.tableView.reloadData()
+            
         }.failure { error in
-            print(error)
+            self.tableView.mj_header?.endRefreshing()
+            self.tableView.mj_footer?.endRefreshing()
+            self.tableView.mj_footer?.isHidden = false;
         }
-//        task.handleResponse(response: AFDataResponse<Any>)
     }
 }
 
@@ -66,6 +90,9 @@ extension HomeVideoListController {
 
 class HomeVideoListController: UIViewController {
 
+    lazy var modelList:Array = [PostInfo]()
+    
+    
     lazy var tableView: UITableView = {
         let listView = UITableView.init(frame: view.bounds, style: .grouped)
         listView.delegate = self;
@@ -79,14 +106,13 @@ class HomeVideoListController: UIViewController {
         listView.estimatedSectionFooterHeight = 0.0
         listView.contentInsetAdjustmentBehavior = .never
         listView.showsVerticalScrollIndicator = false
-        
         if #available(iOS 15.0, *) {
             listView.sectionHeaderTopPadding = 0.0
         }
         
         return listView
     } ()
-//    lazy var items = [Item]()
+
    
     var page = 0
     
@@ -100,15 +126,15 @@ class HomeVideoListController: UIViewController {
 
 extension HomeVideoListController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        tableView.mj_footer.isHidden = items.count == 0
-//        return items.count
-        return 10
+
+        return self.modelList.count
     }
     
     static let ItemCellId = "item"
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
+        var model = modelList[indexPath.row]
+        
         var tmpCell = tableView.dequeueReusableCell(withIdentifier: Self.ItemCellId)
         if tmpCell == nil {
         tmpCell = HomeVideoListCell(style: .subtitle, reuseIdentifier: Self.ItemCellId)
@@ -120,7 +146,8 @@ extension HomeVideoListController: UITableViewDataSource {
             videoCell.videoVC = videoVC
  
         }
-        
+        let videoCell:HomeVideoListCell = tmpCell as! HomeVideoListCell
+        videoCell.videoVC.postModel = model;
         tmpCell!.backgroundColor = (indexPath.row % 2 == 0) ? .orange : .yellow
         return tmpCell!
     }

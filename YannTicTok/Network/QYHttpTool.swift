@@ -15,7 +15,7 @@ class QYHttpTool {
                         method: HTTPMethod = .get,
                         parameters: [String: Any]?,
                         headers: [String: String]? = nil,
-                        encoding: ParameterEncoding = URLEncoding.default) -> QYHttpTask {
+                        encoding: ParameterEncoding = JSONEncoding.default) -> QYHttpTask {
         let task = QYHttpTask()
 
         var h: HTTPHeaders?
@@ -90,7 +90,7 @@ extension QYHttpTool {
         request(url: url,
                 method: .post,
                 parameters: parameters,
-                headers: nil)
+                headers: headers)
     }
     
     
@@ -100,7 +100,7 @@ extension QYHttpTool {
         request(url: url,
                 method: .get,
                 parameters: parameters,
-                headers: nil)
+                headers: headers)
     }
     
     

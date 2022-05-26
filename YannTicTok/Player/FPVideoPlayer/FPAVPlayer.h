@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface FPAVPlayer : FPPlayer
 
 + (instancetype)player;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 // 扩充属性
 @property (nonatomic, readonly) FPPlayerGestureManager *gestureManager; /**< 手势manager */
 

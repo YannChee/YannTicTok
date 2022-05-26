@@ -8,7 +8,7 @@
 import Alamofire
 
 /// 成功回调
-public typealias QYSuccessClosure = (_ JSON: Any) -> Void
+public typealias QYSuccessClosure = (_ responseObj: Any) -> Void
 ///  失败回调
 public typealias QYFailureClosure = (_ error: Error) -> Void
 /// 进度回调

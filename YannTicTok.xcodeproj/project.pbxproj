@@ -104,12 +104,16 @@
 		A5088A9A283F500400CBE52F /* YYThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A5088A4A283F500400CBE52F /* YYThreadSafeArray.m */; };
 		A5088A9B283F500400CBE52F /* YYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A5088A4B283F500400CBE52F /* YYReachability.m */; };
 		A5088A9D283F50CD00CBE52F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9C283F50CD00CBE52F /* VideoViewController.swift */; };
+		A5088A9F283F60E400CBE52F /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9E283F60E400CBE52F /* GenericConstant.swift */; };
+		A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088AA0283F699800CBE52F /* PostInfo.swift */; };
 		A5938C83283D53A800C18E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5938C82283D53A800C18E17 /* Assets.xcassets */; };
 		A5938C86283D53A800C18E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5938C84283D53A800C18E17 /* LaunchScreen.storyboard */; };
 		A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C94283D5E4400C18E17 /* HomeViewController.swift */; };
 		A5938C97283D5E6100C18E17 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */; };
 		A5938C99283D5E7C00C18E17 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C98283D5E7C00C18E17 /* InboxViewController.swift */; };
 		A5938C9B283D5E9800C18E17 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C9A283D5E9800C18E17 /* MineViewController.swift */; };
+		A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA50283F865B001D8158 /* APIManger.swift */; };
+		A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */; };
 		A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F1F283DA875008F646A /* MainTabBar.swift */; };
 		A5EE5F24283DA875008F646A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F20283DA875008F646A /* MainTabBarController.swift */; };
 		A5EE5F25283DA875008F646A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F21283DA875008F646A /* AppDelegate.swift */; };
@@ -318,6 +322,8 @@
 		A5088A4B283F500400CBE52F /* YYReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYReachability.m; sourceTree = "<group>"; };
 		A5088A4C283F500400CBE52F /* YYSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSentinel.h; sourceTree = "<group>"; };
 		A5088A9C283F50CD00CBE52F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		A5088A9E283F60E400CBE52F /* GenericConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericConstant.swift; sourceTree = "<group>"; };
+		A5088AA0283F699800CBE52F /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
 		A5938C76283D53A700C18E17 /* YannTicTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YannTicTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C82283D53A800C18E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5938C85283D53A800C18E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -326,6 +332,8 @@
 		A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		A5938C98283D5E7C00C18E17 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		A5938C9A283D5E9800C18E17 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		A5D6AA50283F865B001D8158 /* APIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManger.swift; sourceTree = "<group>"; };
+		A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPrefectchManager.swift; sourceTree = "<group>"; };
 		A5EE5F1F283DA875008F646A /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		A5EE5F20283DA875008F646A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A5EE5F21283DA875008F646A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -793,6 +801,7 @@
 				A5EE5F20283DA875008F646A /* MainTabBarController.swift */,
 				A5EE5F22283DA875008F646A /* SceneDelegate.swift */,
 				A5088964283F127800CBE52F /* YannTicTok-Bridging-Header.h */,
+				A5088A9E283F60E400CBE52F /* GenericConstant.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -803,6 +812,9 @@
 				A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */,
 				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
 				A5088A9C283F50CD00CBE52F /* VideoViewController.swift */,
+				A5088AA0283F699800CBE52F /* PostInfo.swift */,
+				A5D6AA50283F865B001D8158 /* APIManger.swift */,
+				A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -956,6 +968,7 @@
 				A5088A4E283F500400CBE52F /* YYCache.m in Sources */,
 				A5088A53283F500400CBE52F /* YYSpriteSheetImage.m in Sources */,
 				A5088A65283F500400CBE52F /* YYTextLayout.m in Sources */,
+				A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */,
 				A5088A55283F500400CBE52F /* YYImageCoder.m in Sources */,
 				A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */,
 				A5088A94283F500400CBE52F /* YYTransaction.m in Sources */,
@@ -967,6 +980,7 @@
 				A5088A7E283F500400CBE52F /* UIGestureRecognizer+YYAdd.m in Sources */,
 				A5088A8B283F500400CBE52F /* NSNotificationCenter+YYAdd.m in Sources */,
 				A5088A82283F500400CBE52F /* NSArray+YYAdd.m in Sources */,
+				A5088A9F283F60E400CBE52F /* GenericConstant.swift in Sources */,
 				A508898F283F4D7700CBE52F /* FPVideoPlayer.m in Sources */,
 				A5088A9A283F500400CBE52F /* YYThreadSafeArray.m in Sources */,
 				A5088992283F4D7700CBE52F /* ZFKVOController.m in Sources */,
@@ -986,6 +1000,7 @@
 				A5EE5F26283DA875008F646A /* SceneDelegate.swift in Sources */,
 				A5088A8D283F500400CBE52F /* NSObject+YYAddForKVO.m in Sources */,
 				A5938C99283D5E7C00C18E17 /* InboxViewController.swift in Sources */,
+				A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */,
 				A5088A5F283F500400CBE52F /* YYClassInfo.m in Sources */,
 				A5088990283F4D7700CBE52F /* FPIJKPlayerManager.m in Sources */,
 				A5088A85283F500400CBE52F /* NSObject+YYAdd.m in Sources */,
@@ -1003,6 +1018,7 @@
 				A5088A6D283F500400CBE52F /* NSParagraphStyle+YYText.m in Sources */,
 				A5088A61283F500400CBE52F /* YYTextMagnifier.m in Sources */,
 				A5088A7C283F500400CBE52F /* UIView+YYAdd.m in Sources */,
+				A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */,
 				A5088A95283F500400CBE52F /* YYDispatchQueuePool.m in Sources */,
 				A5088A6A283F500400CBE52F /* YYLabel.m in Sources */,
 				A5088A66283F500400CBE52F /* YYTextLine.m in Sources */,

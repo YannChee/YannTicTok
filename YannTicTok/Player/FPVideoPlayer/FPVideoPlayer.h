@@ -10,6 +10,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FPVideoPlayer :  FPAVPlayer
 
++ (instancetype)player;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+
 @property(nonatomic, strong) void (^singleTappedPlayer)(void); /**< 单击播放器 */
 @property(nonatomic, strong) void (^doubleTappedPlayer)(void); /**< 双击播放器 */
 

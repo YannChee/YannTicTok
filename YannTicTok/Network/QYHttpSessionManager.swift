@@ -19,7 +19,9 @@ final class QYHttpSessionManager {
         let config = URLSessionConfiguration.af.default
         config.timeoutIntervalForRequest = 30  // Timeout interval
         config.timeoutIntervalForResource = 30  // Timeout interval
+        
         sessoion = Alamofire.Session(configuration: config)
+        
     }
     
     
