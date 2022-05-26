@@ -32,6 +32,7 @@
 		A508895E283EEB9B00CBE52F /* QYHttpTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpTool.swift; sourceTree = "<group>"; };
 		A5088960283EF40100CBE52F /* QYHttpSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpSessionManager.swift; sourceTree = "<group>"; };
 		A5088962283F057C00CBE52F /* QYHttpTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QYHttpTask.swift; sourceTree = "<group>"; };
+		A5088964283F127800CBE52F /* YannTicTok-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YannTicTok-Bridging-Header.h"; sourceTree = "<group>"; };
 		A5938C76283D53A700C18E17 /* YannTicTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YannTicTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C82283D53A800C18E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5938C85283D53A800C18E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				A5EE5F1F283DA875008F646A /* MainTabBar.swift */,
 				A5EE5F20283DA875008F646A /* MainTabBarController.swift */,
 				A5EE5F22283DA875008F646A /* SceneDelegate.swift */,
+				A5088964283F127800CBE52F /* YannTicTok-Bridging-Header.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -186,6 +188,7 @@
 				TargetAttributes = {
 					A5938C75283D53A700C18E17 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 					};
 				};
 			};
@@ -419,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KWS4G3Y399;
@@ -437,6 +441,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannchee.tictok.YannTicTok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "YannTicTok/Main/YannTicTok-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -448,6 +454,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KWS4G3Y399;
@@ -466,6 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yannchee.tictok.YannTicTok;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "YannTicTok/Main/YannTicTok-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

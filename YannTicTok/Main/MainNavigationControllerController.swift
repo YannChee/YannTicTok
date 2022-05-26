@@ -12,21 +12,18 @@ class MainNavigationControllerController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        navigationBar.backgroundColor = .red
-        
-//        navigationBar.bar
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithDefaultBackground()
+        navigationBar.scrollEdgeAppearance = appearance
+
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if viewControllers.count > 0 {
+            // if是为了解决push回来时，没有底部导航的问题
+            viewController.hidesBottomBarWhenPushed = true
+            
+        }
+        super.pushViewController(viewController, animated: animated)
     }
-    */
-
 }

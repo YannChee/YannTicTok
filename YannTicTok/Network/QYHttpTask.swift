@@ -14,7 +14,7 @@ public typealias QYFailureClosure = (_ error: Error) -> Void
 /// 进度回调
 public typealias QYProgressHandler = (Progress) -> Void
 
-class QYHttpTask {
+public class QYHttpTask {
     
     /// Alamofire.DataRequest 请求信息
     var request: Alamofire.Request?
@@ -53,5 +53,27 @@ class QYHttpTask {
             closure(progress)
         }
     }
+    
+    
+    // MARK: - Callback
+
+    @discardableResult
+    public func success(_ closure: @escaping QYSuccessClosure) -> Self {
+        successHandler = closure
+        return self
+    }
+
+    @discardableResult
+    public func failure(_ closure: @escaping QYFailureClosure) -> Self {
+        failedHandler = closure
+        return self
+    }
+
+    @discardableResult
+    public func progress(closure: @escaping QYProgressHandler) -> Self {
+        progressHandler = closure
+        return self
+    }
+
     
 }

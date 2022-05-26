@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "首页"
+        
         view.backgroundColor = UIColor.blue
         
         videoListVC = HomeVideoListController.init()
@@ -22,6 +22,11 @@ class HomeViewController: UIViewController {
         view.addSubview(videoListVC.view)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.navigationBar.isHidden = true;
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
