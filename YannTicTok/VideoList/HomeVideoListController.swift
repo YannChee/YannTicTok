@@ -74,13 +74,14 @@ class HomeVideoListController: UIViewController {
         listView.backgroundColor = .black
         listView.separatorStyle = .none
         listView.isPagingEnabled = true
-        listView.estimatedRowHeight = 0
-        listView.estimatedSectionHeaderHeight = 0
-        listView.estimatedSectionFooterHeight = 0
+        listView.estimatedRowHeight = 0.0
+        listView.estimatedSectionHeaderHeight = 0.0
+        listView.estimatedSectionFooterHeight = 0.0
         listView.contentInsetAdjustmentBehavior = .never
+        listView.showsVerticalScrollIndicator = false
         
         if #available(iOS 15.0, *) {
-            listView.sectionHeaderTopPadding = 0
+            listView.sectionHeaderTopPadding = 0.0
         }
         
         return listView
@@ -113,12 +114,11 @@ extension HomeVideoListController: UITableViewDataSource {
         tmpCell = HomeVideoListCell(style: .subtitle, reuseIdentifier: Self.ItemCellId)
             let videoCell:HomeVideoListCell = tmpCell as! HomeVideoListCell
             videoCell.frame = view.bounds;
-            let videoVC: UIViewController = UIViewController.init()
+            let videoVC: VideoViewController = VideoViewController.init()
 
             addChild(videoVC)
-            videoCell.viewController = videoVC
+            videoCell.videoVC = videoVC
  
-            
         }
         
         tmpCell!.backgroundColor = (indexPath.row % 2 == 0) ? .orange : .yellow
@@ -126,16 +126,7 @@ extension HomeVideoListController: UITableViewDataSource {
     }
 }
 
-//func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//    guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for: indexPath) as? CustomTableViewCell
-//    else {
-//        fatalError("Unable to deque cell")
-//        
-//    }
-//    cell.lbl.text = "test"
-//    cell.settingImage.image = UIImage(named: "imgName")
-//    return cell
-//}
+
 extension HomeVideoListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.bounds.height;

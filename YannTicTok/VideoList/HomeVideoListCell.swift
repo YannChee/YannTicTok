@@ -9,14 +9,14 @@ import UIKit
 
 class HomeVideoListCell: UITableViewCell {
     
-  open var viewController: UIViewController! {
+    public var videoVC: VideoViewController! {
         didSet {
             contentView.subviews.forEach {
                 $0.removeFromSuperview()
             }
             
-            contentView.addSubview(viewController.view)
-            viewController.view.frame = contentView.bounds
+            contentView.addSubview(videoVC.view)
+            videoVC.view.frame = contentView.bounds
         }
     }
 

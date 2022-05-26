@@ -1,13 +1,21 @@
 PODS:
   - Alamofire (5.6.1)
+  - CocoaAsyncSocket (7.6.5)
+  - HandyJSON (5.0.2)
   - Kingfisher (7.2.2)
+  - KTVCocoaHTTPServer (1.0.0):
+    - CocoaAsyncSocket
+  - KTVHTTPCache (2.0.1):
+    - KTVCocoaHTTPServer
   - MJRefresh (3.7.5)
   - SnapKit (5.6.0)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - HandyJSON
   - Kingfisher
+  - KTVHTTPCache
   - MJRefresh
   - SnapKit
   - SwiftyJSON
@@ -15,18 +23,26 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CocoaAsyncSocket
+    - HandyJSON
     - Kingfisher
+    - KTVCocoaHTTPServer
+    - KTVHTTPCache
     - MJRefresh
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
   Kingfisher: 184d4d1a8c36666e663caf8e08abe87898595c53
+  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
+  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 86dde881a2a7506777a85a6da2f8929beadc76ed
+PODFILE CHECKSUM: a47ba0fac40e121c3f90971c5d37217b5ad959b3
 
 COCOAPODS: 1.11.2
