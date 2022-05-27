@@ -27,7 +27,7 @@ class MainTabBarController: UITabBarController {
         addChildVC("Discover", select0IndxStatusImageArr[1], "ic_tab_discover_active", DiscoverViewController.self)
         addChild(UIViewController.init())
         addChildVC("Inbox", select0IndxStatusImageArr[2], "ic_tab_notifications_active", InboxViewController.self)
-        addChildVC("Me", select0IndxStatusImageArr[3],"ic_tab_me_active", InboxViewController.self)
+        addChildVC("Me", select0IndxStatusImageArr[3],"ic_tab_me_active", MineViewController.self)
         
     }
     

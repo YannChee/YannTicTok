@@ -98,7 +98,7 @@ extension HomeVideoListController {
         }.failure { error in
             self.tableView.mj_header?.endRefreshing()
             self.tableView.mj_footer?.endRefreshing()
-            self.tableView.mj_footer?.isHidden = false;
+            self.tableView.mj_footer?.isHidden = true;
         }
     }
 }
@@ -124,7 +124,6 @@ class HomeVideoListController: UIViewController {
     private var dragStartIndex: Int = -1
     
   
-    
     lazy var tableView: UITableView = {
         let listView = UITableView.init(frame: view.bounds, style: .grouped)
         listView.delegate = self;
@@ -146,13 +145,7 @@ class HomeVideoListController: UIViewController {
         return listView
     } ()
 
-   
-    var page = 0
     
-    
-
-    
-
 
 }
 
