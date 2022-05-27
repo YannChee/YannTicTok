@@ -12,6 +12,18 @@
 ![2.底部loading.gif](https://upload-images.jianshu.io/upload_images/1216368-506c0827f1da31c2.gif?imageMogr2/auto-orient/strip%7CimageView2/0/w/440)
 ![3.滑动播放视频](https://upload-images.jianshu.io/upload_images/1216368-e451693eb455712e.gif?imageMogr2/auto-orient/strip%7CimageView2/0/w/440) 
 
+
+1.基于Alamofire5.6 纯Swift网络请求框架的封装;
+
+2.播放器的封装,播放器是以前用OC写的,用AVPlayer实现的;
+
+3.tableView嵌套播放器的逻辑处理
+
+TODO: 
+将要开发的功能:
+视频图片预下载,近期更新
+其它几个子页面 计划抽时间使用flutter来实现,可能得很久..
+
 ###  获取资源文件
 - 下载TicTok的安装包.ipa文件
 - 提取安装包里面图片资源 (i我用的是OS Images Extractor,也可以用cartool,M1芯片的mac无法运行,只能使用intel芯片的mac)
