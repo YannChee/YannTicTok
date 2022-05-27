@@ -1,6 +1,8 @@
 # YannTicTok
 使用swift5.x版本仿写TicTok
 
+使用方法:
+下载完成项目后执行 pod install 命令
 
 
 效果图:
