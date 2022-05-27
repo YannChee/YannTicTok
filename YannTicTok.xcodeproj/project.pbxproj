@@ -114,6 +114,9 @@
 		A5938C9B283D5E9800C18E17 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C9A283D5E9800C18E17 /* MineViewController.swift */; };
 		A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA50283F865B001D8158 /* APIManger.swift */; };
 		A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */; };
+		A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */; };
+		A5D6AA5A2840DE9A001D8158 /* UIView+QYFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA592840DE9A001D8158 /* UIView+QYFrame.swift */; };
+		A5D6AA5C2840E666001D8158 /* UIColor+QYExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA5B2840E666001D8158 /* UIColor+QYExtension.swift */; };
 		A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F1F283DA875008F646A /* MainTabBar.swift */; };
 		A5EE5F24283DA875008F646A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F20283DA875008F646A /* MainTabBarController.swift */; };
 		A5EE5F25283DA875008F646A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EE5F21283DA875008F646A /* AppDelegate.swift */; };
@@ -334,6 +337,9 @@
 		A5938C9A283D5E9800C18E17 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		A5D6AA50283F865B001D8158 /* APIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManger.swift; sourceTree = "<group>"; };
 		A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPrefectchManager.swift; sourceTree = "<group>"; };
+		A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+VideoList.swift"; sourceTree = "<group>"; };
+		A5D6AA592840DE9A001D8158 /* UIView+QYFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+QYFrame.swift"; sourceTree = "<group>"; };
+		A5D6AA5B2840E666001D8158 /* UIColor+QYExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+QYExtension.swift"; sourceTree = "<group>"; };
 		A5EE5F1F283DA875008F646A /* MainTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		A5EE5F20283DA875008F646A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A5EE5F21283DA875008F646A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -426,12 +432,12 @@
 		A5088973283F4D7600CBE52F /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				A5088974283F4D7600CBE52F /* ZFKVOController.h */,
 				A5088975283F4D7700CBE52F /* FPAVPlayerManager.h */,
-				A5088976283F4D7700CBE52F /* ZFReachabilityManager.h */,
-				A5088977283F4D7700CBE52F /* ZFKVOController.m */,
-				A5088978283F4D7700CBE52F /* ZFReachabilityManager.m */,
 				A5088979283F4D7700CBE52F /* FPAVPlayerManager.m */,
+				A5088974283F4D7600CBE52F /* ZFKVOController.h */,
+				A5088977283F4D7700CBE52F /* ZFKVOController.m */,
+				A5088976283F4D7700CBE52F /* ZFReachabilityManager.h */,
+				A5088978283F4D7700CBE52F /* ZFReachabilityManager.m */,
 			);
 			path = AVPlayer;
 			sourceTree = "<group>";
@@ -768,6 +774,7 @@
 		A5938C78283D53A700C18E17 /* YannTicTok */ = {
 			isa = PBXGroup;
 			children = (
+				A5D6AA582840DE81001D8158 /* Extensions */,
 				A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */,
 				A5938C94283D5E4400C18E17 /* HomeViewController.swift */,
 				A5938C98283D5E7C00C18E17 /* InboxViewController.swift */,
@@ -792,6 +799,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A5D6AA582840DE81001D8158 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5D6AA592840DE9A001D8158 /* UIView+QYFrame.swift */,
+				A5D6AA5B2840E666001D8158 /* UIColor+QYExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A5EE5F1E283DA875008F646A /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -809,12 +825,13 @@
 		A5EE5F29283DD826008F646A /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
-				A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */,
-				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
-				A5088A9C283F50CD00CBE52F /* VideoViewController.swift */,
-				A5088AA0283F699800CBE52F /* PostInfo.swift */,
 				A5D6AA50283F865B001D8158 /* APIManger.swift */,
+				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
+				A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */,
 				A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */,
+				A5088AA0283F699800CBE52F /* PostInfo.swift */,
+				A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */,
+				A5088A9C283F50CD00CBE52F /* VideoViewController.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -969,14 +986,17 @@
 				A5088A53283F500400CBE52F /* YYSpriteSheetImage.m in Sources */,
 				A5088A65283F500400CBE52F /* YYTextLayout.m in Sources */,
 				A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */,
+				A5D6AA5A2840DE9A001D8158 /* UIView+QYFrame.swift in Sources */,
 				A5088A55283F500400CBE52F /* YYImageCoder.m in Sources */,
 				A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */,
 				A5088A94283F500400CBE52F /* YYTransaction.m in Sources */,
+				A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */,
 				A5088A80283F500400CBE52F /* UIControl+YYAdd.m in Sources */,
 				A5088A83283F500400CBE52F /* NSNumber+YYAdd.m in Sources */,
 				A5088A8A283F500400CBE52F /* NSString+YYAdd.m in Sources */,
 				A508898E283F4D7700CBE52F /* FPijkPlayer.m in Sources */,
 				A5088A81283F500400CBE52F /* UIFont+YYAdd.m in Sources */,
+				A5D6AA5C2840E666001D8158 /* UIColor+QYExtension.swift in Sources */,
 				A5088A7E283F500400CBE52F /* UIGestureRecognizer+YYAdd.m in Sources */,
 				A5088A8B283F500400CBE52F /* NSNotificationCenter+YYAdd.m in Sources */,
 				A5088A82283F500400CBE52F /* NSArray+YYAdd.m in Sources */,

@@ -8,6 +8,7 @@
 import UIKit
 import MJRefresh
 import SwiftyJSON
+import SwiftUI
 
 // MARK: - 生命周期方法
 extension HomeVideoListController {
@@ -87,11 +88,22 @@ extension HomeVideoListController {
 }
 
 
-
+// MARK: - 属性
 class HomeVideoListController: UIViewController {
-
+    var currentIndex:Int = 0
+    
     lazy var modelList:Array = [PostInfo]()
     
+    /// 正在暂停的vc
+    private var pausingVideoVC: VideoViewController? = nil
+    /// 正在播放的vc
+    private var playingVideoVC: VideoViewController? = nil
+    
+    
+    /// 手指拖拽起点index ,默认-1
+    private var dragStartIndex: Int = -1
+    
+  
     
     lazy var tableView: UITableView = {
         let listView = UITableView.init(frame: view.bounds, style: .grouped)
@@ -100,14 +112,14 @@ class HomeVideoListController: UIViewController {
         listView.showsVerticalScrollIndicator = true
         listView.backgroundColor = .black
         listView.separatorStyle = .none
-        listView.isPagingEnabled = true
-        listView.estimatedRowHeight = 0.0
-        listView.estimatedSectionHeaderHeight = 0.0
-        listView.estimatedSectionFooterHeight = 0.0
+        listView.isPagingEnabled = false
+        listView.estimatedRowHeight = 0
+        listView.estimatedSectionHeaderHeight = 0
+        listView.estimatedSectionFooterHeight = 0
         listView.contentInsetAdjustmentBehavior = .never
         listView.showsVerticalScrollIndicator = false
         if #available(iOS 15.0, *) {
-            listView.sectionHeaderTopPadding = 0.0
+            listView.sectionHeaderTopPadding = 0
         }
         
         return listView
@@ -133,7 +145,7 @@ extension HomeVideoListController: UITableViewDataSource {
     static let ItemCellId = "item"
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        var model = modelList[indexPath.row]
+        let model = modelList[indexPath.row]
         
         var tmpCell = tableView.dequeueReusableCell(withIdentifier: Self.ItemCellId)
         if tmpCell == nil {
@@ -151,20 +163,200 @@ extension HomeVideoListController: UITableViewDataSource {
         tmpCell!.backgroundColor = (indexPath.row % 2 == 0) ? .orange : .yellow
         return tmpCell!
     }
+    
+  
 }
 
+// MARK: - 播放相关
+extension HomeVideoListController {
+    /** 除了targetVC 播放外,其它播放器都停止播放, 如果targetVC 为空,则stop所有VC播放  ,从头开始放*/
+    func onlyPlayVideoForVC(targetVC: VideoViewController?) {
+        var isCanPlay = false
+        for childVC in self.children {
+            guard childVC.isMember(of: VideoViewController.self) else {
+                continue
+            }
+            
+            let videoVC: VideoViewController = childVC as! VideoViewController
+            
+            if (targetVC != nil && targetVC == childVC) {
+                isCanPlay = true
+            } else {
+                videoVC.stopVideo()
+            }
+            
+        }
+        
+        guard isCanPlay else { return }
+        targetVC?.initUrlPlayerAndNotAutoPlay()
+        targetVC?.playVideo()
+    }
+    
+    /** 除了targetVC 暂停外,其它播放器都停止播放, 如果targetVC 为空,则停止所有VC播放 ,从头开始放 */
+    func onlyPauseVideoForVC(targetVC: VideoViewController?) {
+        var isCanPuase = false
+        for childVC in self.children {
+            guard childVC.isMember(of: VideoViewController.self) else {
+                continue
+            }
+            
+            let videoVC: VideoViewController = childVC as! VideoViewController
+            
+            if (targetVC != nil && targetVC == childVC) {
+                isCanPuase = true
+            } else {
+                videoVC.stopVideo()
+            }
+        }
+        guard isCanPuase else { return }
+        targetVC?.pauseVideo()
+        pausingVideoVC = targetVC
+    }
+    
+    private func getCenterVideoCell() -> HomeVideoListCell? {
+        
+        let isVisible = isViewLoaded && (view.window != nil) && !(view.isHidden || tableView.isHidden)
+        guard isVisible else {
+            return nil
+        }
+        
+        let cell =  tableView.findMinCenterCell()
+        
+        guard cell is HomeVideoListCell else { return nil }
+        return cell as? HomeVideoListCell
+    }
+    
+    
+    
+    // MARK: 找到最合适的VC来播放视频: 从头播放 或者 按暂停的视频继续播放
+    func playVideoForFittestVC() {
+        
+        // 1.取出屏幕中心cell
+        guard let playCell: HomeVideoListCell = getCenterVideoCell()  else {
+            return
+        }
+        
+        // 2.播放cell中的视频
+        let playVC:VideoViewController = playCell.videoVC
+        
+        // FIXME: xxxxx
+        if (pausingVideoVC != nil && pausingVideoVC == playVC){ // 继续播放
+            pausingVideoVC?.playVideo()
+        } else { // 从头播放
+            onlyPlayVideoForVC(targetVC: playVC)
+        }
+        
+        playingVideoVC = playVC
+        pausingVideoVC = nil
+        
+    }
+    
+    
+//    #pragma mark  找到最合适的VC来播放视频: 从头播放 或者 按暂停的视频继续播放
+//    /** 找到最合适的VC来播放视频 */
+//    - (void)playVideoForFittestVC {
+//        FPHomeListCell *playCell = [self getMinCenterCell];
+//        if (!playCell) {
+//            return;
+//        }
+//
+//        self.currentVC = playCell.viewController;
+//        // 取出当前indexPath
+//        NSIndexPath *currentIndexPath = self.currentIndexPath;
+//
+//        if (![self.currentVC isMemberOfClass:FPHomeVideoMediaController.class]) { // 视频播放
+//            // 隐藏广告
+//            [self hideAllAdView];
+//            // 播放视频
+//            self.currentPlayingVideoVC = nil;
+//            [self onlyPauseVideoForVC:self.currentPlayingVideoVC];
+//            self.pausingVideoVC = nil;
+//
+//            return;
+//        }
+//
+//
+//        FPHomeVideoMediaController *playVC = (FPHomeVideoMediaController *)self.currentVC;
+//        self.currentPlayingVideoVC = playVC;
+//
+//        if (self.pausingVideoVC && self.pausingVideoVC ==  self.currentPlayingVideoVC) {
+//            [self.currentPlayingVideoVC playVideo];
+//        } else {
+//            [self onlyPlayVideoForVC:playVC];
+//
+//            if (!self.buryPresenter.previousVC) {
+//                self.buryPresenter.previousVC = playVC;
+//            }
+//        }
+    
+    
+    
+//
+//        self.pausingVideoVC = nil;
+//        [playVC hidePlayBtn];
+//    }
+        
+        
+}
 
+// MARK: - tableView 代理
 extension HomeVideoListController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // 1.是否预请求下一页数据接口
+        let isNeedAutoLoadNext = modelList.count >= 2 && indexPath.row == modelList.count - 2 && tableView.mj_footer?.isRefreshing == false
+        if (isNeedAutoLoadNext) {
+            //                    [self requestForDataListWithPullingDown:NO];
+        };
+        
+        // 2.预加载 视频, 图片
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        dragStartIndex = self.currentIndex
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let shouldScroll = self.modelList.count > 0 && self.tableView.mj_header?.isRefreshing == false
+        guard shouldScroll else { return }
+        
+        DispatchQueue.main.async {
+            let translatedPoint = scrollView.panGestureRecognizer.translation(in: scrollView)
+            scrollView.panGestureRecognizer.isEnabled = false
+            
+            let deltaDistant = self.view.qy_height * 0.3
+            
+            if translatedPoint.y < -deltaDistant && self.currentIndex < (self.modelList.count - 1) {
+                self.currentIndex += 1
+            }
+            if translatedPoint.y > deltaDistant && self.currentIndex > 0 {
+                self.currentIndex -= 1
+            }
+            
+            UIView.animate(withDuration: 0.15, delay: 0.0, options: .curveEaseOut, animations: {
+                self.tableView.scrollToRow(at: IndexPath.init(row: self.currentIndex, section: 0), at: .top, animated: false)
+            }, completion: { finished in
+                scrollView.panGestureRecognizer.isEnabled = true
+            })
+            
+            if (self.dragStartIndex != self.currentIndex) {
+                self.playVideoForFittestVC()
+            }
+        }
+        
+    }
+    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return view.bounds.height;
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.0001
+        return kTableViewMinSectionHeaderFooterHeight
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0001
+        return kTableViewMinSectionHeaderFooterHeight
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

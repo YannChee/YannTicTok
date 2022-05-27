@@ -11,7 +11,7 @@
 /** 滑块的大小 */
 static const CGFloat kSliderBtnWH = 19.0;
 /** 间距 */
-static const CGFloat kProgressMargin = 2.0;
+//static const CGFloat kProgressMargin = 2.0;
 /** 进度的高度 */
 static const CGFloat kProgressH = 1.0;
 /** 拖动slider动画的时间*/

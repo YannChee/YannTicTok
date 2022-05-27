@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import AVFoundation
 
 
 // MARK: - 生命周期
@@ -14,31 +15,25 @@ extension VideoViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupUI()
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-//            self.player.isPaused
-//        }
+        // 播放状态随时可播放
+        player.playerReadyToPlay = {[weak self]  (_ , _) -> Void in
+            self?.player.placeholderImageView.isHidden = true
+        }
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        player.frame = view.bounds;
+        player.frame = view.bounds
+//        player.frame = CGRect.init(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height - 0.001)
         playOrPauseBtn.bottom = view.height - 100
-        progressLabelView.bottom = view.height - 51;
-        self.sliderView.bottom = view.bottom;
+        progressLabelView.bottom = view.height - 51
+        self.sliderView.bottom = view.bottom
         
         view.bringSubviewToFront(sliderView)
         view.bringSubviewToFront(playOrPauseBtn)
@@ -49,17 +44,17 @@ extension VideoViewController {
     
     
     private func setupUI() {
-       view.backgroundColor = UIColor.black
-       view.addSubview(player.playerView)
-       view.addSubview(playOrPauseBtn)
-       view.addSubview(progressLabelView)
-       view.addSubview(sliderView)
-       view.bringSubviewToFront(backgroundImgV)
-//       view.bringSubviewToFront(bottomContentView)
-//       view.bringSubviewToFront(rightFunctionsView)
-//       view.bringSubviewToFront(rejectReasonView)
+        view.backgroundColor = .black
+        view.addSubview(player.playerView)
+        view.addSubview(playOrPauseBtn)
+        view.addSubview(progressLabelView)
+        view.addSubview(sliderView)
+        view.bringSubviewToFront(backgroundImgV)
+        //       view.bringSubviewToFront(bottomContentView)
+        //       view.bringSubviewToFront(rightFunctionsView)
+        //       view.bringSubviewToFront(rejectReasonView)
     }
-
+    
     
     func initUrlPlayerAndNotAutoPlay () {
         guard let urlStr =  postModel?.content?.url else {
@@ -78,12 +73,43 @@ extension VideoViewController {
         
         player.placeholderImageView.isHidden = false
     }
-
+    
+    
+    
 }
 
+// MARK: - 播放器控制
+extension VideoViewController {
+    public func playVideo() {
+        if (player.isMuted) {
+            try? AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, options: [AVAudioSession.CategoryOptions.defaultToSpeaker,AVAudioSession.CategoryOptions.allowBluetooth])
+        }
+        player.play()
+        
+        playOrPauseBtn.isHidden = true
+        playOrPauseBtn.setImage(UIImage(named: "Post_Pause"), for: .normal)
+    }
+    
+    
+    public func pauseVideo() {
+        player.pause()
+        
+        playOrPauseBtn.setImage(UIImage(named: "Post_Play"), for: .normal)
+    }
+    
+    public func stopVideo() {
+        player.stop()
+        
+        player.placeholderImageView.isHidden = false
+    }
+    
+    
+ 
+}
 
+// MARK: 属性
 class VideoViewController: UIViewController {
-
+    
     var postModel: PostInfo? {
         
         didSet {
@@ -100,11 +126,13 @@ class VideoViewController: UIViewController {
     
     var videoCoverImg: UIImage?
     
-
-    lazy var player: FPVideoPlayer = {
+    
+    private lazy var player: FPVideoPlayer = {
         let videoPlayer = FPVideoPlayer()
         return videoPlayer
     }()
+    
+    
     
     lazy var playOrPauseBtn: UIButton = {
         let btn = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 56, height: 56))
@@ -121,7 +149,7 @@ class VideoViewController: UIViewController {
         view.isHidden = true
         return view
     }()
-
+    
     lazy var sliderView:FPVideoPlayerSliderView = {
         sliderView = FPVideoPlayerSliderView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 10))
         sliderView.contentMode = .bottom
@@ -129,19 +157,19 @@ class VideoViewController: UIViewController {
         sliderView.maximumTrackTintColor = UIColor.clear
         sliderView.delegate = self
         sliderView.minimumTrackTintColor = UIColor.init(white: 1, alpha: 0.2)
-
+        
         sliderView.backgroundColor = UIColor.clear
         sliderView.sliderRadius = 2
         sliderView.sliderHeight = 2
         sliderView.setThumbImage(UIImage(named: "Post_sliderbtn_normal") ?? UIImage(),for: .normal)
         sliderView.setThumbImage(UIImage(named: "Post_sliderbtn_selected") ?? UIImage(), for: .selected)
-//        sliderView.expandResponseAreaBounds(UIEdgeInsets(top: 12, left: 0, bottom: 5, right: 0))
+        //        sliderView.expandResponseAreaBounds(UIEdgeInsets(top: 12, left: 0, bottom: 5, right: 0))
         return sliderView
     }()
     
     lazy var backgroundImgV:UIImageView = {
         let imgV = UIImageView()
-
+        
         // 根据宽高比生成新的图片
         let originImage = UIImage(named: "Post_PostInfoBG")!
         let targetWidth = kScreenWidth
@@ -150,11 +178,12 @@ class VideoViewController: UIViewController {
         imgV.image = newImage
         return imgV
     }()
-
+        
 }
 
 // MARK: -
 extension VideoViewController {
+    
 
     /// 下载视频封面图
     func downloadVideoCoverImgThenShow () {
@@ -173,7 +202,7 @@ extension VideoViewController {
 }
 
 
-
+// MARK: - 进度条滑块
 extension VideoViewController: FPVideoPlayerSliderViewDelegate {
     
 }

@@ -11,3 +11,5 @@ import Foundation
 public let kScreenWidth = UIScreen.main.bounds.width
 /// -> 手机屏幕的高度
 public let kScreenHeight = UIScreen.main.bounds.height
+
+public let kTableViewMinSectionHeaderFooterHeight = 0.001

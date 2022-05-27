@@ -58,7 +58,7 @@ static NSString *const kPresentationSize         = @"presentationSize";
     id _itemEndObserver;
     ZFKVOController *_playerItemKVO;
 }
-//@property (nonatomic, strong) AVPlayerLayer *playerLayer;
+
 @property (nonatomic, assign) BOOL isBuffering;
 @property (nonatomic, assign) BOOL isReadyToPlay;
 @property (nonatomic, strong) AVAssetImageGenerator *imageGenerator;
@@ -74,7 +74,6 @@ static NSString *const kPresentationSize         = @"presentationSize";
     AVURLAsset * _asset;
     AVPlayerItem *_playerItem;
     AVPlayer * _player;
-//    AVPlayerLayer *_avPlayerLayer;
 }
 
 
