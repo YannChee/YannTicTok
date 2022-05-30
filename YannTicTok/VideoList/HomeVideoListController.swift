@@ -65,9 +65,10 @@ extension HomeVideoListController {
             "os" : "apple",
             "Content-Type" : "application/json",
             "appver" :    "1.4.7"]
-        
-        QYHttpTool.POST(url: "https://server.sortinghat.cn/api/topic/topicRecommendPostList",
-                        parameters: param,headers:tempHeader).success {[weak self] responseObj in
+        let urlStr = "https://server.sortinghat.cn/api/topic/topicRecommendPostList";
+        QYHttpTool.POST(url:urlStr ,
+                        parameters: param,
+                        headers:tempHeader).success {[weak self] responseObj in
             
             self!.tableView.mj_header?.endRefreshing()
             self!.tableView.mj_footer?.endRefreshing()
@@ -138,9 +139,9 @@ class HomeVideoListController: UIViewController {
         listView.contentInsetAdjustmentBehavior = .never
         listView.showsVerticalScrollIndicator = false
         listView.scrollsToTop = false
-        if #available(iOS 15.0, *) {
-            listView.sectionHeaderTopPadding = 0
-        }
+//        if #available(iOS 15.0, *) {
+//            listView.sectionHeaderTopPadding = 0
+//        }
         
         return listView
     } ()
@@ -382,11 +383,11 @@ extension HomeVideoListController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return kTableViewMinSectionHeaderFooterHeight
+        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return kTableViewMinSectionHeaderFooterHeight
+        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

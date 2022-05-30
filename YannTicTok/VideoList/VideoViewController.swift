@@ -227,7 +227,7 @@ class VideoViewController: UIViewController {
     }()
     
     lazy var sliderView:FPVideoPlayerSliderView = {
-        sliderView = FPVideoPlayerSliderView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 10))
+       let sliderView = FPVideoPlayerSliderView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 10))
         sliderView.contentMode = .bottom
         sliderView.allowTapped = false
         sliderView.maximumTrackTintColor = UIColor.clear
