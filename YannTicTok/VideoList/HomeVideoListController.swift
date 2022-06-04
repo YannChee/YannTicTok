@@ -291,6 +291,32 @@ extension HomeVideoListController: UITableViewDelegate {
         // 2.预加载 视频, 图片
     }
     
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return view.bounds.height;
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+}
+
+// MARK: - UIScrollViewDelegate
+extension HomeVideoListController: UIScrollViewDelegate {
+    
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         dragStartIndex = currentIndex
     }
@@ -318,7 +344,7 @@ extension HomeVideoListController: UITableViewDelegate {
             let translatedPoint = scrollView.panGestureRecognizer.translation(in: scrollView)
             scrollView.panGestureRecognizer.isEnabled = false
             
-            let deltaDistant = self.view.qy_height * 0.2
+            let deltaDistant = self.view.qy_height * 0.1
             
             if translatedPoint.y < -deltaDistant && self.currentIndex < (self.modelList.count - 1) {
                 self.currentIndex += 1
@@ -339,26 +365,5 @@ extension HomeVideoListController: UITableViewDelegate {
            
         }
         
-    }
-    
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return view.bounds.height;
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return CGFloat(kTableViewMinSectionHeaderFooterHeight)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
     }
 }
