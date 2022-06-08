@@ -106,6 +106,7 @@
 		A5088A9D283F50CD00CBE52F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9C283F50CD00CBE52F /* VideoViewController.swift */; };
 		A5088A9F283F60E400CBE52F /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9E283F60E400CBE52F /* GenericConstant.swift */; };
 		A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088AA0283F699800CBE52F /* PostInfo.swift */; };
+		A55F3BF02850501D00C90DC5 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F3BEF2850501D00C90DC5 /* DiscoverView.swift */; };
 		A5938C83283D53A800C18E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5938C82283D53A800C18E17 /* Assets.xcassets */; };
 		A5938C86283D53A800C18E17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5938C84283D53A800C18E17 /* LaunchScreen.storyboard */; };
 		A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C94283D5E4400C18E17 /* HomeViewController.swift */; };
@@ -327,6 +328,7 @@
 		A5088A9C283F50CD00CBE52F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		A5088A9E283F60E400CBE52F /* GenericConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericConstant.swift; sourceTree = "<group>"; };
 		A5088AA0283F699800CBE52F /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
+		A55F3BEF2850501D00C90DC5 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
 		A5938C76283D53A700C18E17 /* YannTicTok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YannTicTok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5938C82283D53A800C18E17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5938C85283D53A800C18E17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 			children = (
 				A5D6AA582840DE81001D8158 /* Extensions */,
 				A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */,
+				A55F3BEF2850501D00C90DC5 /* DiscoverView.swift */,
 				A5938C94283D5E4400C18E17 /* HomeViewController.swift */,
 				A5938C9A283D5E9800C18E17 /* MineViewController.swift */,
 				A5938C98283D5E7C00C18E17 /* InboxViewController.swift */,
@@ -1021,6 +1024,7 @@
 				A5088A8D283F500400CBE52F /* NSObject+YYAddForKVO.m in Sources */,
 				A5938C99283D5E7C00C18E17 /* InboxViewController.swift in Sources */,
 				A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */,
+				A55F3BF02850501D00C90DC5 /* DiscoverView.swift in Sources */,
 				A5088A5F283F500400CBE52F /* YYClassInfo.m in Sources */,
 				A5088990283F4D7700CBE52F /* FPIJKPlayerManager.m in Sources */,
 				A5088A85283F500400CBE52F /* NSObject+YYAdd.m in Sources */,
