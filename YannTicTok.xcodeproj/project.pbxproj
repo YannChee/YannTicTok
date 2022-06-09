@@ -103,7 +103,7 @@
 		A5088A99283F500400CBE52F /* YYTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5088A49283F500400CBE52F /* YYTimer.m */; };
 		A5088A9A283F500400CBE52F /* YYThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = A5088A4A283F500400CBE52F /* YYThreadSafeArray.m */; };
 		A5088A9B283F500400CBE52F /* YYReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = A5088A4B283F500400CBE52F /* YYReachability.m */; };
-		A5088A9D283F50CD00CBE52F /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9C283F50CD00CBE52F /* VideoViewController.swift */; };
+		A5088A9D283F50CD00CBE52F /* VideoContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9C283F50CD00CBE52F /* VideoContainerController.swift */; };
 		A5088A9F283F60E400CBE52F /* GenericConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088A9E283F60E400CBE52F /* GenericConstant.swift */; };
 		A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5088AA0283F699800CBE52F /* PostInfo.swift */; };
 		A55F3BF02850501D00C90DC5 /* DiscoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F3BEF2850501D00C90DC5 /* DiscoverView.swift */; };
@@ -113,6 +113,8 @@
 		A5938C97283D5E6100C18E17 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */; };
 		A5938C99283D5E7C00C18E17 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C98283D5E7C00C18E17 /* InboxViewController.swift */; };
 		A5938C9B283D5E9800C18E17 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C9A283D5E9800C18E17 /* MineViewController.swift */; };
+		A599A6FA2850E85600FE08E2 /* VideoMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A6F92850E85600FE08E2 /* VideoMediaController.swift */; };
+		A599A6FC2850E8A900FE08E2 /* VideoInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A6FB2850E8A900FE08E2 /* VideoInteractionController.swift */; };
 		A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA50283F865B001D8158 /* APIManger.swift */; };
 		A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */; };
 		A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */; };
@@ -325,7 +327,7 @@
 		A5088A4A283F500400CBE52F /* YYThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYThreadSafeArray.m; sourceTree = "<group>"; };
 		A5088A4B283F500400CBE52F /* YYReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYReachability.m; sourceTree = "<group>"; };
 		A5088A4C283F500400CBE52F /* YYSentinel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYSentinel.h; sourceTree = "<group>"; };
-		A5088A9C283F50CD00CBE52F /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		A5088A9C283F50CD00CBE52F /* VideoContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContainerController.swift; sourceTree = "<group>"; };
 		A5088A9E283F60E400CBE52F /* GenericConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericConstant.swift; sourceTree = "<group>"; };
 		A5088AA0283F699800CBE52F /* PostInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInfo.swift; sourceTree = "<group>"; };
 		A55F3BEF2850501D00C90DC5 /* DiscoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverView.swift; sourceTree = "<group>"; };
@@ -337,6 +339,8 @@
 		A5938C96283D5E6100C18E17 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		A5938C98283D5E7C00C18E17 /* InboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		A5938C9A283D5E9800C18E17 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		A599A6F92850E85600FE08E2 /* VideoMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMediaController.swift; sourceTree = "<group>"; };
+		A599A6FB2850E8A900FE08E2 /* VideoInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInteractionController.swift; sourceTree = "<group>"; };
 		A5D6AA50283F865B001D8158 /* APIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManger.swift; sourceTree = "<group>"; };
 		A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPrefectchManager.swift; sourceTree = "<group>"; };
 		A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+VideoList.swift"; sourceTree = "<group>"; };
@@ -802,6 +806,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		A599A6FD2850E8D000FE08E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */,
+				A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */,
+				A5088A9C283F50CD00CBE52F /* VideoContainerController.swift */,
+				A599A6FB2850E8A900FE08E2 /* VideoInteractionController.swift */,
+				A599A6F92850E85600FE08E2 /* VideoMediaController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		A5D6AA582840DE81001D8158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,13 +844,11 @@
 		A5EE5F29283DD826008F646A /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
+				A599A6FD2850E8D000FE08E2 /* Controller */,
 				A5D6AA50283F865B001D8158 /* APIManger.swift */,
 				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
-				A5EE5F2A283DD826008F646A /* HomeVideoListController.swift */,
 				A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */,
 				A5088AA0283F699800CBE52F /* PostInfo.swift */,
-				A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */,
-				A5088A9C283F50CD00CBE52F /* VideoViewController.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -957,6 +971,7 @@
 				A5088A76283F500400CBE52F /* UIColor+YYAdd.m in Sources */,
 				A5088A74283F500400CBE52F /* UITextField+YYAdd.m in Sources */,
 				A5EE5F25283DA875008F646A /* AppDelegate.swift in Sources */,
+				A599A6FA2850E85600FE08E2 /* VideoMediaController.swift in Sources */,
 				A5088A51283F500400CBE52F /* YYImageCache.m in Sources */,
 				A5088A56283F500400CBE52F /* YYFrameImage.m in Sources */,
 				A5088998283F4D7700CBE52F /* FPNetworkCostView.m in Sources */,
@@ -1010,7 +1025,7 @@
 				A5088A59283F500400CBE52F /* UIImageView+YYWebImage.m in Sources */,
 				A5088A63283F500400CBE52F /* YYTextEffectWindow.m in Sources */,
 				A5EE5F2D283DD866008F646A /* HomeVideoListCell.swift in Sources */,
-				A5088A9D283F50CD00CBE52F /* VideoViewController.swift in Sources */,
+				A5088A9D283F50CD00CBE52F /* VideoContainerController.swift in Sources */,
 				A5088991283F4D7700CBE52F /* FPPlayerGestureManager.m in Sources */,
 				A5088996283F4D7700CBE52F /* FPNetworkCostTool.m in Sources */,
 				A5088A90283F500400CBE52F /* YYWeakProxy.m in Sources */,
@@ -1066,6 +1081,7 @@
 				A5088A9B283F500400CBE52F /* YYReachability.m in Sources */,
 				A5088A69283F500400CBE52F /* YYTextDebugOption.m in Sources */,
 				A5088A91283F500400CBE52F /* YYAsyncLayer.m in Sources */,
+				A599A6FC2850E8A900FE08E2 /* VideoInteractionController.swift in Sources */,
 				A5088A71283F500400CBE52F /* YYTextAttribute.m in Sources */,
 				A5088A7A283F500400CBE52F /* UIScrollView+YYAdd.m in Sources */,
 				A5088A7B283F500400CBE52F /* UIScreen+YYAdd.m in Sources */,

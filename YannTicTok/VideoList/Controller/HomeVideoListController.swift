@@ -119,9 +119,9 @@ class HomeVideoListController: UIViewController {
     lazy var modelList:Array = [PostInfo]()
     
     /// 正在暂停的vc
-    private var pausingVideoVC: VideoViewController? = nil
+    private var pausingVideoVC: VideoMediaController? = nil
     /// 正在播放的vc
-    private var playingVideoVC: VideoViewController? = nil
+    private var playingVideoVC: VideoMediaController? = nil
     
     
     /// 手指拖拽起点index ,默认-1
@@ -157,17 +157,21 @@ class HomeVideoListController: UIViewController {
 
 // MARK: - 播放相关
 extension HomeVideoListController {
+    
     /** 除了targetVC 播放外,其它播放器都停止播放, 如果targetVC 为空,则stop所有VC播放  ,从头开始放*/
-    func onlyPlayVideoForVC(targetVC: VideoViewController?) {
+    func onlyPlayVideoForVC(targetVC: VideoMediaController?) {
         var isCanPlay = false
         for childVC in self.children {
-            guard childVC.isMember(of: VideoViewController.self) else {
+            guard let videoContainerVC:VideoContainerController = childVC as? VideoContainerController else {
                 continue
             }
             
-            let videoVC: VideoViewController = childVC as! VideoViewController
+            guard videoContainerVC.videoPlayerVC.isMember(of: VideoMediaController.self) else {
+                continue
+            }
             
-            if (targetVC != nil && targetVC == childVC) {
+            let videoVC: VideoMediaController = videoContainerVC.videoPlayerVC
+            if (targetVC != nil && targetVC == videoVC) {
                 isCanPlay = true
             } else {
                 videoVC.stopVideo()
@@ -176,19 +180,20 @@ extension HomeVideoListController {
         }
         
         guard isCanPlay else { return }
+        
         targetVC?.initUrlPlayerAndNotAutoPlay()
         targetVC?.playVideo()
     }
     
     /** 除了targetVC 暂停外,其它播放器都停止播放, 如果targetVC 为空,则停止所有VC播放 ,从头开始放 */
-    func onlyPauseVideoForVC(targetVC: VideoViewController?) {
+    func onlyPauseVideoForVC(targetVC: VideoMediaController?) {
         var isCanPuase = false
         for childVC in self.children {
-            guard childVC.isMember(of: VideoViewController.self) else {
+            guard childVC.isMember(of: VideoMediaController.self) else {
                 continue
             }
             
-            let videoVC: VideoViewController = childVC as! VideoViewController
+            let videoVC: VideoMediaController = childVC as! VideoMediaController
             
             if (targetVC != nil && targetVC == childVC) {
                 isCanPuase = true
@@ -197,6 +202,7 @@ extension HomeVideoListController {
             }
         }
         guard isCanPuase else { return }
+        
         targetVC?.pauseVideo()
         pausingVideoVC = targetVC
     }
@@ -225,9 +231,8 @@ extension HomeVideoListController {
         }
         
         // 2.播放cell中的视频
-        let playVC:VideoViewController = playCell.videoVC
+        let playVC:VideoMediaController = playCell.containerVC.videoPlayerVC
         
-        // FIXME: xxxxx
         if (pausingVideoVC != nil && pausingVideoVC == playVC){ // 继续播放
             pausingVideoVC!.playVideo()
         } else { // 从头播放
@@ -259,11 +264,11 @@ extension HomeVideoListController: UITableViewDataSource {
         guard let videoCell:HomeVideoListCell = tmpCell as? HomeVideoListCell else {
           let videoCell:HomeVideoListCell = HomeVideoListCell(style: .subtitle, reuseIdentifier: Self.ItemCellId)
             videoCell.frame = view.bounds;
-            let videoVC: VideoViewController = VideoViewController.init()
+            let videoContainerVC: VideoContainerController = VideoContainerController.init()
             videoCell.frame = view.bounds;
             
-            addChild(videoVC)
-            videoCell.videoVC = videoVC
+            addChild(videoContainerVC)
+            videoCell.containerVC = videoContainerVC
             return videoCell;
         }
         return videoCell
@@ -280,7 +285,7 @@ extension HomeVideoListController: UITableViewDelegate {
         // 0.更新cell model
         let model = modelList[indexPath.row]
         let videoCell:HomeVideoListCell = cell as! HomeVideoListCell;
-        videoCell.videoVC.postModel = model;
+        videoCell.containerVC.postModel = model;
         
         // 1.是否预请求下一页数据接口
         let isNeedAutoLoadNext = modelList.count >= 2 && indexPath.row == modelList.count - 2 && tableView.mj_footer?.isRefreshing == false
