@@ -115,6 +115,10 @@
 		A5938C9B283D5E9800C18E17 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5938C9A283D5E9800C18E17 /* MineViewController.swift */; };
 		A599A6FA2850E85600FE08E2 /* VideoMediaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A6F92850E85600FE08E2 /* VideoMediaController.swift */; };
 		A599A6FC2850E8A900FE08E2 /* VideoInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A6FB2850E8A900FE08E2 /* VideoInteractionController.swift */; };
+		A599A7102851BD8600FE08E2 /* HomeUserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A70F2851BD8600FE08E2 /* HomeUserAvatarView.swift */; };
+		A599A7122852C56500FE08E2 /* VideoRightContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7112852C56500FE08E2 /* VideoRightContainerView.swift */; };
+		A599A7142852C58000FE08E2 /* ViewBottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7132852C58000FE08E2 /* ViewBottomContainerView.swift */; };
+		A599A7162852FD3000FE08E2 /* VideoInteractionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7152852FD3000FE08E2 /* VideoInteractionContentView.swift */; };
 		A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA50283F865B001D8158 /* APIManger.swift */; };
 		A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */; };
 		A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */; };
@@ -341,6 +345,10 @@
 		A5938C9A283D5E9800C18E17 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		A599A6F92850E85600FE08E2 /* VideoMediaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMediaController.swift; sourceTree = "<group>"; };
 		A599A6FB2850E8A900FE08E2 /* VideoInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInteractionController.swift; sourceTree = "<group>"; };
+		A599A70F2851BD8600FE08E2 /* HomeUserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserAvatarView.swift; sourceTree = "<group>"; };
+		A599A7112852C56500FE08E2 /* VideoRightContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRightContainerView.swift; sourceTree = "<group>"; };
+		A599A7132852C58000FE08E2 /* ViewBottomContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBottomContainerView.swift; sourceTree = "<group>"; };
+		A599A7152852FD3000FE08E2 /* VideoInteractionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInteractionContentView.swift; sourceTree = "<group>"; };
 		A5D6AA50283F865B001D8158 /* APIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManger.swift; sourceTree = "<group>"; };
 		A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPrefectchManager.swift; sourceTree = "<group>"; };
 		A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+VideoList.swift"; sourceTree = "<group>"; };
@@ -818,6 +826,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		A599A6FE2851B93B00FE08E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
+				A599A70F2851BD8600FE08E2 /* HomeUserAvatarView.swift */,
+				A599A7112852C56500FE08E2 /* VideoRightContainerView.swift */,
+				A599A7132852C58000FE08E2 /* ViewBottomContainerView.swift */,
+				A599A7152852FD3000FE08E2 /* VideoInteractionContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A599A6FF2851B93B00FE08E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A5088AA0283F699800CBE52F /* PostInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A5D6AA582840DE81001D8158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -844,11 +872,11 @@
 		A5EE5F29283DD826008F646A /* VideoList */ = {
 			isa = PBXGroup;
 			children = (
+				A599A6FF2851B93B00FE08E2 /* Model */,
+				A599A6FE2851B93B00FE08E2 /* View */,
 				A599A6FD2850E8D000FE08E2 /* Controller */,
 				A5D6AA50283F865B001D8158 /* APIManger.swift */,
-				A5EE5F2C283DD866008F646A /* HomeVideoListCell.swift */,
 				A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */,
-				A5088AA0283F699800CBE52F /* PostInfo.swift */,
 			);
 			path = VideoList;
 			sourceTree = "<group>";
@@ -989,6 +1017,7 @@
 				A5088995283F4D7700CBE52F /* FPPlayerLogManager.m in Sources */,
 				A5088A8F283F500400CBE52F /* CALayer+YYAdd.m in Sources */,
 				A5088A8E283F500400CBE52F /* YYCGUtilities.m in Sources */,
+				A599A7122852C56500FE08E2 /* VideoRightContainerView.swift in Sources */,
 				A5088A5E283F500400CBE52F /* NSObject+YYModel.m in Sources */,
 				A5088A62283F500400CBE52F /* YYTextContainerView.m in Sources */,
 				A5088A5A283F500400CBE52F /* MKAnnotationView+YYWebImage.m in Sources */,
@@ -1006,8 +1035,10 @@
 				A5088AA1283F699800CBE52F /* PostInfo.swift in Sources */,
 				A5D6AA5A2840DE9A001D8158 /* UIView+QYFrame.swift in Sources */,
 				A5088A55283F500400CBE52F /* YYImageCoder.m in Sources */,
+				A599A7162852FD3000FE08E2 /* VideoInteractionContentView.swift in Sources */,
 				A5EE5F23283DA875008F646A /* MainTabBar.swift in Sources */,
 				A5088A94283F500400CBE52F /* YYTransaction.m in Sources */,
+				A599A7142852C58000FE08E2 /* ViewBottomContainerView.swift in Sources */,
 				A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */,
 				A5088A80283F500400CBE52F /* UIControl+YYAdd.m in Sources */,
 				A5088A83283F500400CBE52F /* NSNumber+YYAdd.m in Sources */,
@@ -1046,6 +1077,7 @@
 				A5088A72283F500400CBE52F /* YYTextArchiver.m in Sources */,
 				A5088A7F283F500400CBE52F /* UIImage+YYAdd.m in Sources */,
 				A5088A86283F500400CBE52F /* NSData+YYAdd.m in Sources */,
+				A599A7102851BD8600FE08E2 /* HomeUserAvatarView.swift in Sources */,
 				A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */,
 				A5088A6F283F500400CBE52F /* NSAttributedString+YYText.m in Sources */,
 				A508899C283F4D7700CBE52F /* FPPlayer.m in Sources */,

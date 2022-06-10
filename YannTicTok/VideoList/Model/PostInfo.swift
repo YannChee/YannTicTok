@@ -8,13 +8,20 @@
 import Foundation
 import HandyJSON
 
+enum FollowUserStatus: Int32 {
+    case none = 0            /**< 没有任何关系 */
+    case followEachOther = 1   /**< 互相关注 */
+    case followTargetOnly = 2  /**< 当前用户关注目标用户 */
+    case targetFollowMeOnly = 3 /**< 目标用户关注当前用户 */
+}
+
 struct PostContentInfo: HandyJSON {
     var applyStatus: Int = 0
     var authorId: Int = 0
     var avatar: String!
     var createdAt: Int = 0
     var disLikeType: Int = 0
-    var followStatus: Int = 0
+    var followStatus: FollowUserStatus = .none /**< 关注状态 */
     var h265Size: Int = 0
     var h265Url: String!
     var hd265Url: String!
@@ -22,7 +29,7 @@ struct PostContentInfo: HandyJSON {
     var likeCount: Int = 0
     var likeType: Int = 0
     var m3U8Url: String!
-    var nickname: String!
+    var nickname: String? = ""
     var opTopicIds: String!
     var pendantUrl: String!
     var postId: Int = 0
@@ -31,9 +38,8 @@ struct PostContentInfo: HandyJSON {
     var replyCount: Int = 0
     var size: Int = 0
     var tagId: String!
-    /** 视频 缩略图 */
-    var thumb: String!
-    var title: String!
+    var thumb: String? /**< 视频 缩略图url */
+    var title: String? = "" /**< 内容 */
     var topicIds: String!
     var topics: String!
     var url: String!

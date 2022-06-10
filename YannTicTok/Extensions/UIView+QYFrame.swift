@@ -10,8 +10,7 @@ import UIKit
 // MARK: - Properties
 extension UIView {
     
-    /// x origin of view.
-    var qy_x: CGFloat {
+    var qy_left: CGFloat {
         get {
             return frame.origin.x
         }
@@ -20,8 +19,7 @@ extension UIView {
         }
     }
 
-    /// y origin of view.
-    var qy_y: CGFloat {
+    var qy_top: CGFloat {
         get {
             return frame.origin.y
         }
@@ -30,7 +28,6 @@ extension UIView {
         }
     }
 
-    /// Width of view.
     var qy_width: CGFloat {
         get {
             return frame.size.width
@@ -40,7 +37,6 @@ extension UIView {
         }
     }
 
-    /// Height of view.
     var qy_height: CGFloat {
         get {
             return frame.size.height
@@ -50,7 +46,6 @@ extension UIView {
         }
     }
 
-    /// Size of view.
     var qy_size: CGSize {
         get {
             return frame.size
@@ -60,7 +55,6 @@ extension UIView {
         }
     }
 
-    /// Origin of view.
     var qy_origin: CGPoint {
         get {
             return frame.origin
@@ -70,7 +64,6 @@ extension UIView {
         }
     }
 
-    /// CenterX of view.
     var qy_centerX: CGFloat {
         get {
             return center.x
@@ -80,7 +73,6 @@ extension UIView {
         }
     }
 
-    /// CenterY of view.
     var qy_centerY: CGFloat {
         get {
             return center.y
@@ -90,7 +82,6 @@ extension UIView {
         }
     }
 
-    /// Bottom of view.
     var qy_bottom: CGFloat {
         set {
             frame.origin.y = newValue - frame.size.height
@@ -101,4 +92,13 @@ extension UIView {
         }
     }
 
+    var qy_right: CGFloat {
+        set {
+            frame.origin.x = newValue - frame.size.width;
+        }
+        
+        get {
+            return frame.origin.x + frame.size.width
+        }
+    }
 }

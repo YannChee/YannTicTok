@@ -19,6 +19,7 @@ class VideoContainerController: UIViewController {
         
         didSet {
             videoPlayerVC.postModel = postModel
+            interactionVC.postModel = postModel
         }
     }
     

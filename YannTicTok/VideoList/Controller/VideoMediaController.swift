@@ -23,10 +23,10 @@ class VideoMediaController: UIViewController {
             guard let urlStr =  postModel?.content?.thumb else {
                 return
             }
-            guard let videoUrlCover = NSURL.init(string: urlStr) else {
+            guard let videoUrlCover: URL = URL.init(string: urlStr) as URL? else {
                 return
             }
-            player.placeholderImageView.kf.setImage(with: videoUrlCover as URL ,placeholder: UIImage.init(named: "img_video_loading"))
+            player.placeholderImageView.kf.setImage(with: videoUrlCover ,placeholder: UIImage.init(named: "img_video_loading"))
         }
     
     }
