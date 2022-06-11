@@ -119,6 +119,7 @@
 		A599A7122852C56500FE08E2 /* VideoRightContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7112852C56500FE08E2 /* VideoRightContainerView.swift */; };
 		A599A7142852C58000FE08E2 /* ViewBottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7132852C58000FE08E2 /* ViewBottomContainerView.swift */; };
 		A599A7162852FD3000FE08E2 /* VideoInteractionContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A599A7152852FD3000FE08E2 /* VideoInteractionContentView.swift */; };
+		A5CC07BC2854DA3700F3113C /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC07BB2854DA3700F3113C /* HttpClient.swift */; };
 		A5D6AA51283F865B001D8158 /* APIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA50283F865B001D8158 /* APIManger.swift */; };
 		A5D6AA53283FBC1E001D8158 /* MediaPrefectchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */; };
 		A5D6AA5728407FBF001D8158 /* UITableView+VideoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */; };
@@ -349,6 +350,7 @@
 		A599A7112852C56500FE08E2 /* VideoRightContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRightContainerView.swift; sourceTree = "<group>"; };
 		A599A7132852C58000FE08E2 /* ViewBottomContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewBottomContainerView.swift; sourceTree = "<group>"; };
 		A599A7152852FD3000FE08E2 /* VideoInteractionContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInteractionContentView.swift; sourceTree = "<group>"; };
+		A5CC07BB2854DA3700F3113C /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		A5D6AA50283F865B001D8158 /* APIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManger.swift; sourceTree = "<group>"; };
 		A5D6AA52283FBC1E001D8158 /* MediaPrefectchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPrefectchManager.swift; sourceTree = "<group>"; };
 		A5D6AA5628407FBF001D8158 /* UITableView+VideoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+VideoList.swift"; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				A508895E283EEB9B00CBE52F /* QYHttpTool.swift */,
 				A5088960283EF40100CBE52F /* QYHttpSessionManager.swift */,
 				A5088962283F057C00CBE52F /* QYHttpTask.swift */,
+				A5CC07BB2854DA3700F3113C /* HttpClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				A5088A72283F500400CBE52F /* YYTextArchiver.m in Sources */,
 				A5088A7F283F500400CBE52F /* UIImage+YYAdd.m in Sources */,
 				A5088A86283F500400CBE52F /* NSData+YYAdd.m in Sources */,
+				A5CC07BC2854DA3700F3113C /* HttpClient.swift in Sources */,
 				A599A7102851BD8600FE08E2 /* HomeUserAvatarView.swift in Sources */,
 				A5938C95283D5E4400C18E17 /* HomeViewController.swift in Sources */,
 				A5088A6F283F500400CBE52F /* NSAttributedString+YYText.m in Sources */,
